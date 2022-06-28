@@ -5,6 +5,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 
 const authRouter = require("./routes/auth");
+const usersRouter = require("./routes/users");
 
 require("dotenv").config();
 
@@ -24,6 +25,7 @@ app.use(
 
 // Routes middleware
 app.use("/api/auth", authRouter);
+app.use("/api/users", usersRouter);
 
 // Connecting to DB
 mongoose.connect(process.env.DB_ACCESS_KEY, () =>
