@@ -2,7 +2,35 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "jhon",
-    "email": "jhon@gmail.com",
+    "username": "bob",
+    "email": "bob@gmail.com",
     "password": "123456789"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "bob@gmail.com",
+    "password": "123456789"
+}
+
+###
+
+GET http://localhost:5000/api/auth/refresh_token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJiMjE0NTI0NTU0NWVhNzBiN2I3NjgiLCJ1c2VybmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHl2WTYyWFk2cjg4U3JIUDBKVlpqRXVHNTRScDJsdXNoRTQuZVVxOXVDMGNyd0k2dXlqdW0uIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0yOFQxNTo0MTozNC4zNDBaIiwiX192IjowLCJpYXQiOjE2NTY0MzI5OTR9.S-XV4uS9ZJE65SHMqo9F9UIbmK51kQV1ZUlifT9QKCI"
+}
+
+###
+
+DELETE http://localhost:5000/api/auth/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJiMjE0NTI0NTU0NWVhNzBiN2I3NjgiLCJ1c2VybmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHl2WTYyWFk2cjg4U3JIUDBKVlpqRXVHNTRScDJsdXNoRTQuZVVxOXVDMGNyd0k2dXlqdW0uIiwiY3JlYXRlZEF0IjoiMjAyMi0wNi0yOFQxNTo0MTozNC4zNDBaIiwiX192IjowLCJpYXQiOjE2NTY0MzI5OTR9.S-XV4uS9ZJE65SHMqo9F9UIbmK51kQV1ZUlifT9QKCI"
 }
