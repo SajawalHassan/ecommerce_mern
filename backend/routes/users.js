@@ -10,8 +10,7 @@ router.get("/get/:id", authenticateToken, async (req, res) => {
 
     res.json(user);
   } catch (error) {
-    res.sendStatus(500);
-    console.log(error);
+    res.status(400).json({ error: error.message });
   }
 });
 
@@ -33,7 +32,22 @@ router.put("/edit/:id", authenticateToken, async (req, res) => {
 
     res.json("User info changed!");
   } catch (error) {
-    res.sendStatus(500);
+    res.status(400).json({ error: error.message });
+  }
+});
+
+router.delete("/delete/:id", authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    if (!req.user._id === user._id)
+      return res.status(403).json("You are not the owner");
+
+    await user.deleteOne();
+
+    res.json("User deleted!");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 

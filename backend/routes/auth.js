@@ -30,7 +30,7 @@ router.post("/register", async (req, res) => {
 
     res.json(newUser);
   } catch (error) {
-    res.sendStatus(500);
+    res.status(400).json({ error: error.message });
   }
 });
 
@@ -72,8 +72,7 @@ router.post("/login", async (req, res) => {
       refreshToken,
     });
   } catch (error) {
-    console.log(error);
-    res.sendStatus(500);
+    res.status(400).json({ error: error.message });
   }
 });
 
@@ -100,8 +99,7 @@ router.get("/refresh_token", async (req, res) => {
       res.json({ accessToken });
     });
   } catch (error) {
-    res.sendStatus(500);
-    console.log(error);
+    res.status(400).json({ error: error.message });
   }
 });
 
@@ -111,7 +109,7 @@ router.delete("/logout", async (req, res) => {
 
     res.json("Logged out!");
   } catch (error) {
-    res.sendStatus(500);
+    res.status(400).json({ error: error.message });
   }
 });
 
