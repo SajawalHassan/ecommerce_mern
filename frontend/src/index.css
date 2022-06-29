@@ -12,6 +12,10 @@
   animation: 300ms menu-animation;
 }
 
+body {
+  background-color: rgb(243 244 246);
+}
+
 @keyframes menu-animation {
   0% {
     transform: translateX(-100%);

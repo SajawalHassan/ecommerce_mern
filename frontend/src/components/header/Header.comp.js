@@ -6,27 +6,46 @@ import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutl
 import MenuLink from "./MenuLink.comp";
 
 import { Link } from "react-router-dom";
+import HeaderLink from "./HeaderLink.comp";
 
 function Header() {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className="py-2 px-3 flex items-center justify-between">
-      <div className="p-[5.5px] btn" onClick={() => setMenu(true)}>
+    <div className="py-2 px-4 md:px-8 flex items-center justify-between">
+      <div className="p-[5.5px] btn md:hidden" onClick={() => setMenu(true)}>
         <MenuOutlinedIcon style={{ fontSize: "2.1rem" }} />
+      </div>
+
+      <div className="md:flex items-center space-x-5 hidden">
+        <HeaderLink text="Products" />
+        <HeaderLink text="Reviews" />
+        <HeaderLink text="About Us" />
+        <HeaderLink text="Cart" />
       </div>
 
       <Link to="/home">
         <img src={logoText} alt="" className="h-[2.5rem]" />
       </Link>
 
-      <div className="p-2 btn">
+      <div className="p-2 btn md:hidden">
         <ShoppingCartOutlinedIcon style={{ fontSize: "2.1rem" }} />
+      </div>
+
+      <div className="md:flex items-center space-x-5 hidden">
+        <div className="flex items-center space-x-3">
+          <button className="py-1 px-5 bg-blue-500 text-white font-bold rounded-sm hover:bg-blue-600 transition-colors duration-500">
+            Sign up
+          </button>
+          <button className="py-1 px-5 font-bold rounded-sm ring-1 ring-gray-300 hover:bg-gray-300 transition-colors duration-500">
+            Sign in
+          </button>
+        </div>
       </div>
 
       {menu && (
         <div
-          className="absolute inset-0 m-auto w-screen h-screen bg-white menu-animation"
+          className="absolute inset-0 m-auto w-screen h-screen bg-gray-100 menu-animation z-20 md:hidden"
           id="menu"
         >
           <div className="py-4 px-3">
