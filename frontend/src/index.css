@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply rounded-full hover:bg-gray-200 transition-colors duration-500 cursor-pointer w-max text-zinc-900;
+  }
+}
+
+.menu-animation {
+  animation: 300ms menu-animation;
+}
+
+@keyframes menu-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
