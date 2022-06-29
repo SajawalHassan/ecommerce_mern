@@ -45,6 +45,7 @@ router.post("/login", async (req, res) => {
     if (!validPass) return res.status(400).json("Invalid password");
 
     const payload = {
+      _id: user._id,
       username: user.username,
       email: user.email,
       createdAt: user.createdAt,
@@ -88,6 +89,7 @@ router.get("/refresh_token", async (req, res) => {
       if (err) return res.sendStatus(403);
 
       const payload = {
+        _id: user._id,
         username: user.username,
         email: user.email,
         createdAt: user.createdAt,
