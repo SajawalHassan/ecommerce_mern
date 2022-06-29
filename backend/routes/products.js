@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const authenticateToken = require("../middleware/authenticateToken");
 const Product = require("../models/Product");
-const { createProductValidation } = require("../utils/validation");
+const {
+  createProductValidation,
+  editProductValidation,
+} = require("../utils/validation");
 
 router.get("/all", authenticateToken, async (req, res) => {
   try {
@@ -43,12 +46,31 @@ router.put("/edit/:id", authenticateToken, async (req, res) => {
 
     if (!req.user._id === product.ownerId)
       return res.status(400).json("You are not the owner");
+
+    const { error } = editProductValidation(req.body);
+    if (error) res.status(400).json(error.details[0].message);
+
     if (req.body === null)
       return res.status(400).json("Please fill in one of the fields");
 
     await product.updateOne({ $set: req.body });
 
     res.json("Product info changed!");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.delete("/delete/:id", authenticateToken, async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+
+    if (!req.user._id === product.ownerId)
+      return res.status(400).json("You are not the owner");
+
+    await product.deleteOne();
+
+    res.json("Product deleted!");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
