@@ -33,3 +33,17 @@ module.exports.createProductValidation = (data) => {
 
   return schema.validate(data);
 };
+
+module.exports.editProductValidation = (data) => {
+  const schema = joi.object({
+    name: joi.string().min(3),
+    description: joi.string().min(10),
+    images: joi.array().min(1),
+    shipsTo: joi.array().min(1),
+    price: joi.number(),
+    inStock: joi.number().min(1),
+    currency: joi.string(),
+  });
+
+  return schema.validate(data);
+};

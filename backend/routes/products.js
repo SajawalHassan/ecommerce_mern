@@ -37,4 +37,21 @@ router.post("/create", authenticateToken, async (req, res) => {
   }
 });
 
+router.put("/edit/:id", authenticateToken, async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+
+    if (!req.user._id === product.ownerId)
+      return res.status(400).json("You are not the owner");
+    if (req.body === null)
+      return res.status(400).json("Please fill in one of the fields");
+
+    await product.updateOne({ $set: req.body });
+
+    res.json("Product info changed!");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;
