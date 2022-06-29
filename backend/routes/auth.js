@@ -39,10 +39,11 @@ router.post("/login", async (req, res) => {
     if (!req.body.password) return res.status(400).json("Password is required");
 
     const user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status(400).json("Invalid email");
+    console.log(user);
+    if (!user) return res.status(400).json("Invalid email or password");
 
     const validPass = await bcrypt.compare(req.body.password, user.password);
-    if (!validPass) return res.status(400).json("Invalid password");
+    if (!validPass) return res.status(400).json("Invalid email or password");
 
     const payload = {
       _id: user._id,

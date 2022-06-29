@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const productsRouter = require("./routes/products");
+const cartsRouter = require("./routes/carts");
 
 require("dotenv").config();
 
@@ -28,6 +29,7 @@ app.use(
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
+app.use("/api/carts", cartsRouter);
 
 // Connecting to DB
 mongoose.connect(process.env.DB_ACCESS_KEY, () =>

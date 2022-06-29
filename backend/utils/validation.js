@@ -47,3 +47,11 @@ module.exports.editProductValidation = (data) => {
 
   return schema.validate(data);
 };
+
+module.exports.createCartValidation = (data) => {
+  const schema = joi.object({
+    items: joi.array().required().min(1),
+  });
+
+  return schema.validate(data);
+};
