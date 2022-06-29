@@ -28,10 +28,10 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:5000/api/carts/add/62bc401349d897d205a2d530
+PUT http://localhost:5000/api/carts/change/62bc447486f0ded3d1e9ee9e
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJiZTVkODRmZmE4NGRiMGQxZjA5YjUiLCJ1c2VybmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMDYtMjlUMDU6Mzk6NTMuNzAxWiIsImlhdCI6MTY1NjUwNDc4NSwiZXhwIjoxNjU2NTA1Mzg1fQ.rQNoTqsB0Db2Xjb33dnhjeYokgIsVvZLTcreoy-fcQs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJiZTVkODRmZmE4NGRiMGQxZjA5YjUiLCJ1c2VybmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMDYtMjlUMDU6Mzk6NTMuNzAxWiIsImlhdCI6MTY1NjUwNTQzOSwiZXhwIjoxNjU2NTA2MDM5fQ.T6p2Gc653IdTKaP8bcImNuWSwrl7GJ-0IWW79yKnFbw
 
 {
-    "item": "62bc39c6972482f3074248af"
+    "product": "62bc39c6972482f3074248af"
 }

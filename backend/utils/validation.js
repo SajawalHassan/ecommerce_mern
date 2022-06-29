@@ -50,7 +50,7 @@ module.exports.editProductValidation = (data) => {
 
 module.exports.createCartValidation = (data) => {
   const schema = joi.object({
-    items: joi.array().required().min(1),
+    products: joi.array().required().min(1),
   });
 
   return schema.validate(data);

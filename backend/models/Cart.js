@@ -5,7 +5,7 @@ const cartSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  items: {
+  products: {
     type: Array,
     required: true,
   },
