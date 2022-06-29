@@ -19,3 +19,17 @@ module.exports.userEditValidation = (data) => {
 
   return schema.validate(data);
 };
+
+module.exports.createProductValidation = (data) => {
+  const schema = joi.object({
+    name: joi.string().required().min(3),
+    description: joi.string().required().min(10),
+    images: joi.array().required().min(1),
+    shipsTo: joi.array().required().min(1),
+    price: joi.number().required(),
+    inStock: joi.number().required().min(1),
+    currency: joi.string().required(),
+  });
+
+  return schema.validate(data);
+};

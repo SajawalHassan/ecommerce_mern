@@ -11,9 +11,15 @@ const productSchema = mongoose.Schema({
     required: true,
     min: 10,
   },
+  images: {
+    type: Array,
+    requried: true,
+    min: 1,
+  },
   shipsTo: {
     type: Array,
     required: true,
+    min: 1,
   },
   price: {
     type: Number,
@@ -21,6 +27,15 @@ const productSchema = mongoose.Schema({
   },
   inStock: {
     type: Number,
+    required: true,
+    min: 1,
+  },
+  currency: {
+    type: String,
+    requried: true,
+  },
+  ownerId: {
+    type: String,
     required: true,
   },
 });
