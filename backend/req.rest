@@ -28,11 +28,6 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/api/users/delete/62bb2145245545ea70b7b768
+GET http://localhost:5000/api/products/all
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJiZTVkODRmZmE4NGRiMGQxZjA5YjUiLCJ1c2VybmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMDYtMjlUMDU6Mzk6NTMuNzAxWiIsImlhdCI6MTY1NjQ4MTI0MywiZXhwIjoxNjU2NDgxODQzfQ.87Taeaf1votfPnvcOGOPTuReLnlJLjNJv-_4DBnEMO8
-
-{
-    "username": "bob",
-    "email": "bob@gmail.com"
-}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmJiZTVkODRmZmE4NGRiMGQxZjA5YjUiLCJ1c2VybmFtZSI6ImJvYiIsImVtYWlsIjoiYm9iQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjItMDYtMjlUMDU6Mzk6NTMuNzAxWiIsImlhdCI6MTY1NjQ4MTk4NCwiZXhwIjoxNjU2NDgyNTg0fQ.1V6y5qF1x8IhU9ggAcYHD3MWNj1D4aaQMcIzH1CSTjI
